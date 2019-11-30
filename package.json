@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/app.ts"
+    "dev": "ts-node-dev src/app.ts",
+    "asset-dev": "encore dev",
+    "asset-watch": "encore dev --watch",
+    "asset-build": "encore production --progress"
   },
   "keywords": [],
   "author": "",
@@ -18,13 +21,17 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "@symfony/webpack-encore": "^0.28.2",
     "@types/dotenv": "^8.2.0",
     "@types/errorhandler": "0.0.32",
     "@types/express": "^4.17.2",
     "@types/mongoose": "^5.5.32",
     "@types/pug": "^2.0.4",
     "@types/socket.io": "^2.1.4",
+    "node-sass": "^4.13.0",
     "nodemon": "^2.0.1",
+    "sass-loader": "^7.3.1",
+    "ts-loader": "^5.4.5",
     "ts-node": "^8.5.4",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"

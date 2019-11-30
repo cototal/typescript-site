@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 
 import errorHandler from "errorhandler";
 import dotenv from "dotenv";
@@ -35,6 +36,18 @@ app.set("view engine", "pug");
 app.use(
     express.static(path.join(__dirname, "../public"), { maxAge: 3e10 })
 );
+
+app.use((req, res, next) => {
+    res.locals.assets = (name: string) => {
+        const manifest = fs.readFileSync(path.join(__dirname, "..", "public", "build", "manifest.json"), "utf8");
+        const data = JSON.parse(manifest);
+        if (null == data[name]) {
+            return `not-found`;
+        }
+        return data[name];
+    }
+    next();
+});
 
 app.use("/", home);
 

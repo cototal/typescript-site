@@ -5,6 +5,11 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title TypeScript Site
+    link(rel="stylesheet", type="text/css", href=assets("build/app.css"))
   body
     .container
       block content
+
+    script(src="/socket.io/socket.io.js")
+    script(src=assets("build/runtime.js"))
+    script(src=assets("build/app.js"))
