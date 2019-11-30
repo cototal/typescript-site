@@ -6,6 +6,6 @@ router.get("/", (req: Request, res: Response) => {
     res.render("home/index", {
         title: "Home"
     });
-})
+});
 
 export default router;
